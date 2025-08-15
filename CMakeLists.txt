@@ -17,3 +17,6 @@ add_executable(my_program biginteger.cpp decode.cpp)
 add_executable(my_tests tests.cc)
 
 target_link_libraries(my_tests GTest::gtest GTest::gtest_main)
+
+enable_testing()
+add_test(NAME my_tests COMMAND my_tests)

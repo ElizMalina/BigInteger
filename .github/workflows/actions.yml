@@ -1,0 +1,26 @@
+name: BigInteger C++
+
+# условия запуска
+
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+
+# список задач
+
+jobs:
+    Checking-Solution:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+            - name: Build
+              run: cmake ..
+                   cmake --build .
+            - name: Run tests
+              run: ./build/my_tests --gtest_color=yes
+
+
