@@ -12,7 +12,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 FetchContent_MakeAvailable(googletest)
 
-add_executable(my_program biginteger.cpp decode.cpp)
+add_executable(my_program biginteger.cpp)
 
 add_executable(my_tests tests.cc)
 
