@@ -18,7 +18,8 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
             - name: Build
-              run: cmake ..
+              run: |
+                   cmake .
                    cmake --build .
             - name: Run tests
               run: ./build/my_tests --gtest_color=yes
