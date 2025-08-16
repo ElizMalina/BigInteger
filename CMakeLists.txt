@@ -16,7 +16,11 @@ add_executable(my_program biginteger.cpp main.cpp)
 
 add_executable(my_tests tests.cc)
 
-target_link_libraries(my_tests GTest::gtest GTest::gtest_main)
+add_library(BigInteger biginteger.cpp)
+
+target_link_libraries(my_program PRIVATE BigInteger)
+
+target_link_libraries(my_tests PRIVATE BigInteger GTest::gtest GTest::gtest_main)
 
 enable_testing()
 add_test(NAME my_tests COMMAND my_tests)
