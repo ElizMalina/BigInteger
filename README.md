@@ -3,8 +3,6 @@
 ![I can't upload a theme image](images/image.png)
 
 
-<img src="https://raw.githubusercontent.com/<OWNER>/<OWNER>/master/<GIF_NAME>.gif" width="30px">
-
 
 During our second semester at St. Petersburg State University, we were tasked with writing a class called "BigInteger" to represent long integers (signed numbers). The project was written in C++.
 
@@ -17,16 +15,16 @@ The class implements:
  - The copy constructor.
  - The move constructor.
  - Operators:
-  - Assignment by copy,
-  - assignment by moving,
-  - comparisons.
+   - Assignment by copy,
+   - assignment by moving,
+   - comparisons.
  - Arithmetic operations: 
-  - addition, 
-  - subtraction, 
-  - multiplication, 
-  - division, 
-  - unary minus, 
-  - unary plus, 
-  - increments and decrements.
+   - addition, 
+   - subtraction, 
+   - multiplication, 
+   - division, 
+   - unary minus, 
+   - unary plus, 
+   - increments and decrements.
  - The external function std::string to_string(const BigInteger &).
  - The external function std::string to_hex(const BigInteger &) to represent a number as a string in the 16th base.
