@@ -4,7 +4,7 @@
 
 
 
-During our second semester at St. Petersburg State University, we were tasked with writing a class called "BigInteger" to represent long integers (signed numbers). The project was written in C++.
+:writing_hand: During our second semester at St. Petersburg State University, we were tasked with writing a class called "BigInteger" to represent long integers (signed numbers). The project was written in C++.
 
 
 
