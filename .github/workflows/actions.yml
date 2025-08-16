@@ -22,6 +22,6 @@ jobs:
                    cmake .
                    cmake --build .
             - name: Run tests
-              run: ./build/my_tests --gtest_color=yes
+              run: ctest --output-on-failure
 
 
