@@ -3,6 +3,7 @@
 #include <string>
 #include <cstdint>
 #include <iostream>
+#include <algorithm>
 
 enum class biginteger_base { dec = 10, hex = 16 };
 constexpr std::uint64_t two_in_32 = 4294967296;
