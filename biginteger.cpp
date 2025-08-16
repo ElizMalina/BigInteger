@@ -150,13 +150,11 @@ bool operator>=(const BigInteger& x, const BigInteger& y) {
 BigInteger operator*(const BigInteger& x, const BigInteger& y) {
 	return BigInteger::Multiplication(x, y);
 }
-
 BigInteger operator+(const BigInteger& x, const BigInteger& y) { 
 	BigInteger tmp = x;
 	tmp += y;
 	return tmp;
 }
-
 BigInteger operator-(const BigInteger& x, const BigInteger& y)
 {
 	BigInteger res = x;
@@ -195,7 +193,6 @@ BigInteger operator/(const BigInteger& x, const BigInteger& y)
 	res /= y;
 	return res;
 }
-
 BigInteger operator%(const BigInteger& x, const BigInteger& y)
 {
 	BigInteger res = x;
@@ -211,7 +208,7 @@ BigInteger::BigInteger(const std::string& stroka, biginteger_base base) {
 			str += ch;
 		}
 	}
-	//std::cout << str;
+	
 	sign = 1;
 	if (str[0] == '-') {
 		sign = -1;
@@ -221,7 +218,7 @@ BigInteger::BigInteger(const std::string& stroka, biginteger_base base) {
 		str.erase(0, 1);
 	}
 	if (str.empty()) {
-		throw std::invalid_argument("ERROR!!!!!!!!!!");
+		throw std::invalid_argument("Empty line");
 	}
 	if (base == biginteger_base::hex) {
 		std::string result = "0";
@@ -241,7 +238,7 @@ BigInteger::BigInteger(const std::string& stroka, biginteger_base base) {
 				throw std::invalid_argument("The argument hex is incorrect");
 			}
 
-			result = Summa(Multiplication(result, std::to_string(16)), std::to_string(digits)); // TODO функции по сумме и произведению строк 
+			result = Summa(Multiplication(result, std::to_string(16)), std::to_string(digits)); 
 		}
 		str = result;
 	}
@@ -301,7 +298,7 @@ BigInteger::BigInteger(const std::string& stroka, biginteger_base base) {
 		std::uint32_t digit;
 		if (!(ch >= '0' && ch <= '9')) {
 			clear();
-			throw std::invalid_argument("Error");
+			throw std::invalid_argument("Symbol error");
 		}
 		digit = ch - '0';
 
@@ -373,7 +370,7 @@ std::string to_hex(const BigInteger& x) {
 			digit = static_cast<char>(num_16 + 'A' - 10);
 		}
 		else {
-			throw std::invalid_argument("ERROR");
+			throw std::invalid_argument("Symbol error in to_hex");
 		}
 		res.push_back(digit);
 		dec = to_string(num / 16);

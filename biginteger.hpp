@@ -15,8 +15,6 @@ private:
 	int sign;
 
 public:
-	//конструктор по умолчанию, инициализирует число нулем
-
 	void Normalize() {
 		while (size_number > 1 && Number[size_number - 1] == 0) {
 			--size_number; 
@@ -80,7 +78,6 @@ public:
 		return *this;
 	}
 
-	//bool operator==(const BigInteger& other) const;
 	void clear() {
 		size_number = 0;
 		sign = 1;
@@ -110,6 +107,7 @@ public:
 
 		return res;
 	}
+    //сумма
 
 	static BigInteger Summa(const BigInteger& x, const BigInteger& y) {
 		BigInteger res;
@@ -183,7 +181,8 @@ public:
 		return res;
 
 	}
-	
+	//вычитание
+
 	static BigInteger Different(const BigInteger& x, const BigInteger& y) {
 		size_t resultLength = x.size_number;
 		uint32_t* tempResult = new uint32_t[resultLength];
@@ -222,7 +221,8 @@ public:
 		delete[] tempResult;
 		return result;
 	}
-
+	//деление
+	
 	static BigInteger Division(const BigInteger& x, const BigInteger& y, BigInteger& R);
 	
 
@@ -287,7 +287,6 @@ public:
 
 		return *this;
 	}
-
 	BigInteger& operator%=(const BigInteger& other) {
 		if (other.isequal(0)) {
 			throw std::invalid_argument("Div by 0 in operator%=");
