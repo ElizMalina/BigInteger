@@ -23,5 +23,7 @@ jobs:
                    cmake --build .
             - name: Run tests
               run: ctest --output-on-failure
+            - name: Checkout
+              uses: actions/checkout@v4
 
 
